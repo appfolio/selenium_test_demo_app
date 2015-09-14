@@ -35,9 +35,9 @@ class BlogPostTest < ActionDispatch::IntegrationTest
   def test_can_create_a_new_blog_post
     new_page = BlogPosts::NewPage.visit
 
-    blog_post= new_page.blog_post
-    blog_post.title.set('this is the title')
-    blog_post.body.set('this is the body')
+    blog_post = new_page.blog_post
+    blog_post.title.set 'this is the title'
+    blog_post.body.set 'this is the body'
     show_page = new_page.submit!
 
     assert_equal 'this is the title', show_page.title.text
