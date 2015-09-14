@@ -43,4 +43,7 @@ class BlogPostTest < ActionDispatch::IntegrationTest
     assert_equal 'this is the title', show_page.title.text
     assert_equal 'this is the body', show_page.body.text
   end
+
+  # Time permitting, maybe add some tests for the show and edit actions?
+
 end
