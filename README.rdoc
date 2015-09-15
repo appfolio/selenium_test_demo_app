@@ -1,5 +1,0 @@
-This is a small scaffoled Rails app.  It is used for practicing using AePageObjects.
-
-Your goal is to get the test at test/selenium/blog_posts_test.rb to pass.
-
-Edit the page objects located in test/page_objects/blog_posts/ and the templates in app/views (if necessary).
