@@ -9,6 +9,7 @@ This is a small scaffoled Rails app. It's helpful for learning to use
 git clone https://github.com/appfolio/selenium_test_demo_app
 cd selenium_test_demo_app
 bundle
+rake db:migrate
 ```
 
 ## Test
