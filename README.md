@@ -24,7 +24,9 @@ rails server
 
 Then visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-(Note: If you're already running something else on port 3000, you can do `rails server -p 3001` or some other number to start it on another port. Be sure to use the correct port in your browser, too.)
+(Note: If you're already running something else on port 3000, you can do `rails
+server -p 3001` or some other number to start it on another port. Be sure to use
+the correct port in your browser, too.)
 
 ## Test
 
