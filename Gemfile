@@ -1,20 +1,22 @@
-source 'https://rubygems.org'
+source 'https://rubygems.org' do
 
-gem 'rails', '3.2.18'
-gem 'sqlite3'
-gem 'jquery-rails'
+  # It's good to keep these gem versions in step with the versions used in
+  # apm_bundle/apps/property/Gemfile
+  APM_PROPERTY_RAILS_VERSION    = '4.0.12'
+  APM_PROPERTY_MINITEST_VERSION = '4.7.5'
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-end
+  gem 'rails', APM_PROPERTY_RAILS_VERSION
+  gem 'sqlite3'
 
-group :test do
-  gem 'ae_page_objects'
-  gem 'selenium-webdriver'
-end
+  group :test do
+    gem 'ae_page_objects'
+    gem 'minitest', APM_PROPERTY_MINITEST_VERSION
+    gem 'selenium-webdriver'
+  end
 
-group :test, :development do
-  gem 'pry-rails'
+  group :development do
+    gem 'pry'
+    gem 'pry-rails'
+    gem 'pry-remote'
+  end
 end
