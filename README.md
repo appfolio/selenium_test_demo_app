@@ -10,7 +10,21 @@ git clone https://github.com/appfolio/selenium_test_demo_app
 cd selenium_test_demo_app
 bundle
 rake db:migrate
+rake db:migrate RAILS_ENV=test
 ```
+
+## Start the app
+
+Interacting with the app live on your computer can be helpful while
+exploring the tests. To start the app, just run
+
+```sh
+rails server
+```
+
+Then visit [http://localhost:3001](http://localhost:3001) in your browser.
+
+(Note: If you're already running something else on port 3000, you can do `rails server -p 3001` or some other number to start it on another port. Be sure to use the correct port in your browser, too.)
 
 ## Test
 
