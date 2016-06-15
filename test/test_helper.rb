@@ -28,10 +28,29 @@ ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection
 
 # end Selenium stuffs
 
-module BlogPosts
-  class Site < AePageObjects::Site
+Capybara.current_driver = Capybara.javascript_driver
+
+# jf: We need a custom router. We can reuse the logic from
+# AePageObjects::BasicRouter, but we need to normalize the input to
+# #path_recognizes_url? and the output from #generate_path.
+class SeleniumTestDemoAppRouter < AePageObjects::BasicRouter
+
+  def path_recognizes_url?(path, url)
+    super without_leading_slash(path), without_leading_slash(url)
+  end
+
+  def generate_path(named_route, *args)
+    with_leading_slash super(named_route, *args)
+  end
+
+  private
+
+  def without_leading_slash(stringable)
+    stringable.to_s.gsub(%r{^/+}, '')
+  end
+
+  def with_leading_slash(stringable)
+    "/#{without_leading_slash(stringable)}"
   end
 end
-
-BlogPosts::Site.initialize!
-Capybara.current_driver = Capybara.javascript_driver
+AePageObjects.default_router = SeleniumTestDemoAppRouter.new
