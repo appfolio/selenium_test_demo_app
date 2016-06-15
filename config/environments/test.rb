@@ -1,4 +1,9 @@
 SeleniumTestDemoApp::Application.configure do
+
+  # JF: Run tests in sorted order so that all AF Academy students are running
+  # the same tests in the same order. Even though random order is better. :)
+  config.active_support.test_order = :sorted
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's
