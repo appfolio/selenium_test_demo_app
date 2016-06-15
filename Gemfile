@@ -1,10 +1,19 @@
 source 'https://rubygems.org' do
 
   # It's good to keep these gem versions in step with the versions used in
-  # apm_bundle/apps/property/Gemfile
+  # apm_bundle/apps/property/Gemfile. You can check the version being used
+  # thusly:
+  #
+  #    $ cd ~/src/apm_bundle/apps/property
+  #    $ bundle show selenium-webdriver
+  #    /Users/force/.rvm/gems/ruby-2.2.3/gems/selenium-webdriver-2.53.0
+  #
+  # So I want to make sure SELENIUM_WEBDRIVER below is set to 2.53.0
   module PropertyGemVersions
     AE_PAGE_OBJECTS    = '2.0.0'
+    CAPYBARA           = '2.2.1'
     MINITEST           = '5.8.0'
+    NOKOGIRI           = '1.6.7.2'
     RAILS              = '4.2.5.2'
     SELENIUM_WEBDRIVER = '2.53.0'
     SQLITE3            = '1.3.11'
@@ -16,7 +25,9 @@ source 'https://rubygems.org' do
 
   group :test do
     gem 'ae_page_objects',    PropertyGemVersions::AE_PAGE_OBJECTS
+    gem 'capybara',           PropertyGemVersions::CAPYBARA
     gem 'minitest',           PropertyGemVersions::MINITEST
+    gem 'nokogiri',           PropertyGemVersions::NOKOGIRI
     gem 'selenium-webdriver', PropertyGemVersions::SELENIUM_WEBDRIVER
   end
 
