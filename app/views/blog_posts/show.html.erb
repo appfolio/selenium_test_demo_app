@@ -2,12 +2,16 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @blog_post.title %>
+  <span class="js-title">
+    <%= @blog_post.title %>
+  </span>
 </p>
 
 <p>
   <strong>Body:</strong>
-  <%= @blog_post.body %>
+  <span class="js-body">
+    <%= @blog_post.body %>
+  </span>
 </p>
 
 <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
