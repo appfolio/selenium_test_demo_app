@@ -22,6 +22,7 @@ source 'https://rubygems.org' do
 
   gem 'rails',   PropertyGemVersions::RAILS
   gem 'sqlite3', PropertyGemVersions::SQLITE3
+  gem 'jquery-rails'
 
   group :test do
     gem 'ae_page_objects',    PropertyGemVersions::AE_PAGE_OBJECTS
