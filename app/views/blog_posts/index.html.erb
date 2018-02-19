@@ -17,7 +17,7 @@
         <td class="js-blog-title"><%= blog_post.title %></td>
         <td class="js-blog-body"><%= blog_post.body %></td>
         <td><%= link_to 'Show', blog_post %></td>
-        <td><%= link_to 'Edit', edit_blog_post_path(blog_post) %></td>
+        <td><%= link_to 'Edit', edit_blog_post_path(blog_post), class: 'js-edit' %></td>
         <td><%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'js-delete' %></td>
       </tr>
     <% end %>
