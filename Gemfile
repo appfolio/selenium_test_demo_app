@@ -10,18 +10,19 @@ source 'https://rubygems.org' do
   #
   # So I want to make sure SELENIUM_WEBDRIVER below is set to 2.53.0
   module PropertyGemVersions
-    AE_PAGE_OBJECTS    = '2.0.0'
-    CAPYBARA           = '2.2.1'
+    AE_PAGE_OBJECTS    = '3.1.1'
+    CAPYBARA           = '2.17.0'
     MINITEST           = '5.8.0'
     NOKOGIRI           = '1.6.7.2'
     RAILS              = '4.2.5.2'
-    SELENIUM_WEBDRIVER = '2.53.0'
+    SELENIUM_WEBDRIVER = '3.9.0'
     SQLITE3            = '1.3.11'
   end
 
 
   gem 'rails',   PropertyGemVersions::RAILS
   gem 'sqlite3', PropertyGemVersions::SQLITE3
+  gem 'jquery-rails'
 
   group :test do
     gem 'ae_page_objects',    PropertyGemVersions::AE_PAGE_OBJECTS

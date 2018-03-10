@@ -44,6 +44,40 @@ class BlogPostTest < ActionDispatch::IntegrationTest
     assert_equal 'this is the body', show_page.body.text
   end
 
-  # Time permitting, maybe add some tests for the show and edit actions?
+  def test_can_edit_a_blog_post
+    BlogPost.create!(
+      title: 'title 1',
+      body: 'body 1'
+    )
 
+    index_page = BlogPosts::IndexPage.visit
+    first_post = index_page.blog_posts.first
+    edit_page = first_post.edit!
+    blog_post = edit_page.blog_post
+
+    assert_equal 'title 1', blog_post.title.value
+    assert_equal 'body 1', blog_post.body.value
+
+    edit_page.blog_post.title.set 'this is the title'
+    edit_page.blog_post.body.set 'this is the body'
+    show_page = edit_page.update!
+
+    assert_equal 'this is the title', show_page.title.text
+    assert_equal 'this is the body', show_page.body.text
+  end
+
+  def test_can_delete_a_blog_post
+    BlogPost.create!(
+      title: 'title 1',
+      body: 'body 1'
+    )
+
+    index_page = BlogPosts::IndexPage.visit
+    index_page = index_page.blog_posts.first.delete! do |alert|
+      assert_equal 'Are you sure?',
+                   alert.text
+    end
+
+    assert_equal 0, index_page.blog_posts.size
+  end
 end
