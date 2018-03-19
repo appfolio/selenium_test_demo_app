@@ -6,9 +6,9 @@ source 'https://rubygems.org' do
   #
   #    $ cd ~/src/apm_bundle/apps/property
   #    $ bundle show selenium-webdriver
-  #    /Users/force/.rvm/gems/ruby-2.2.3/gems/selenium-webdriver-2.53.0
+  #    /Users/natalieschauser/.rvm/gems/ruby-2.3.3/gems/selenium-webdriver-3.9.0
   #
-  # So I want to make sure SELENIUM_WEBDRIVER below is set to 2.53.0
+  # So I want to make sure SELENIUM_WEBDRIVER below is set to 3.9.0
   module PropertyGemVersions
     AE_PAGE_OBJECTS    = '3.1.1'
     CAPYBARA           = '2.17.0'
