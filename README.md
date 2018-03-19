@@ -11,6 +11,9 @@ cd selenium_test_demo_app
 bundle
 rake db:migrate
 rake db:migrate RAILS_ENV=test
+
+Install geckodriver.  On a standard dev mac this is as simple as `brew install geckodriver`
+Install the latest Firefox (58.0.1) https://www.mozilla.org/en-US/firefox/58.0.1/releasenotes/
 ```
 
 ## Start the app
