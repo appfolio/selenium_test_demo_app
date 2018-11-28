@@ -14,7 +14,7 @@ source 'https://rubygems.org' do
     CAPYBARA           = '2.17.0'
     MINITEST           = '5.8.0'
     NOKOGIRI           = '1.6.7.2'
-    RAILS              = '4.2.5.2'
+    RAILS              = '5.0.7'
     SELENIUM_WEBDRIVER = '3.9.0'
     SQLITE3            = '1.3.11'
   end
