@@ -37,7 +37,7 @@ Your goal is to get the test at `test/selenium/blog_posts_test.rb` to pass. You
 can do this by running
 
 ```sh
-rake
+rails test
 ```
 
 Fix the test failures one at a time by editing the page objects located in
@@ -63,7 +63,7 @@ Once you've fixed that first error, repeat the failure -> success cycle until
 `rake` comes back clean like this:
 
 ```
-selenium_test_demo_app$ rake
+selenium_test_demo_app$ rails test
 Run options: --seed 36997
 
 # Running tests:
