@@ -2,12 +2,12 @@ require 'test_helper'
 
 class BlogPostTest < ActionDispatch::IntegrationTest
 
-  def test_index_page_has_title
+  def test_1_index_page_has_title
     index_page = BlogPosts::IndexPage.visit
     assert_equal 'Listing blog_posts', index_page.title.text
   end
 
-  def test_blog_posts_appear_on_index_page
+  def test_2_blog_posts_appear_on_index_page
 
     BlogPost.create!(
       title: 'title 1',
@@ -32,7 +32,7 @@ class BlogPostTest < ActionDispatch::IntegrationTest
     assert_equal 'body 2', last_post.body.text
   end
 
-  def test_can_create_a_new_blog_post
+  def test_3_can_create_a_new_blog_post
     new_page = BlogPosts::NewPage.visit
 
     blog_post = new_page.blog_post
@@ -44,7 +44,7 @@ class BlogPostTest < ActionDispatch::IntegrationTest
     assert_equal 'this is the body', show_page.body.text
   end
 
-  def test_can_edit_a_blog_post
+  def test_4_can_edit_a_blog_post
     BlogPost.create!(
       title: 'title 1',
       body: 'body 1'
@@ -66,7 +66,7 @@ class BlogPostTest < ActionDispatch::IntegrationTest
     assert_equal 'this is the body', show_page.body.text
   end
 
-  def test_can_delete_a_blog_post
+  def test_5_can_delete_a_blog_post
     BlogPost.create!(
       title: 'title 1',
       body: 'body 1'
