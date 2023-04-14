@@ -1,6 +1,6 @@
 module BlogPosts
-  class NewPage < AePageObjects::Document
-    path :new_blog_post
+  class EditPage < AePageObjects::Document
+    path :edit_blog_post
 
     element :submit_button, locator: '.js-submit'
 
@@ -9,7 +9,7 @@ module BlogPosts
       element :body
     end
 
-    def submit!
+    def update!
       submit_button.node.click
       stale!
       window.change_to(ShowPage)
